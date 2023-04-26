@@ -7,7 +7,7 @@ const app = {
     init() {
         // initialise de kaart
         this.map = L.map('map').setView([50.842369, 4.3226], 15);
-        this.map.on('click', onMapClick);
+        // this.map.on('click', onMapClick);
         
         // voeg een tile layer toe, met URL https://a.tile.openstreetmap.org/{z}/{x}/{y}.png
         // vergeet openstreetmap attributie niet
@@ -30,6 +30,8 @@ const app = {
                 // als er coordinaten beschikbaar zijn, kan je de addMarker functie gebruiken om een marker toe te voegen op de kaart
                 this.addMarker(record.fields.wifigps[0], record.fields.wifigps[1])
             });
+            
+    
         }))
     },
     addMarker(lat, lon) {
@@ -38,7 +40,7 @@ const app = {
     },
 };
 
-// app.init();
+app.init();
 
 // function onMapClick(e) {
 //     // alert("You clicked the map at " + e.latlng);
